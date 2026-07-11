@@ -62,18 +62,18 @@
         }
 
         .hero-image {
-            width: 100%;
-            max-width: 100%;
-            border-radius: 16px;
-            overflow: hidden;
+           width: 100vw;          /* Cała szerokość ekranu telefonu */
+           margin-left: -20px;    /* Skasowanie bocznego marginesu strony */
+           border-radius: 0;      /* Brak zaokrągleń na telefonie */
+           overflow: hidden;
         }
 
         .hero-image img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            display: block;
+           width: 100%;
+           height: auto;
+           aspect-ratio: 1 / 1;
+           object-fit: cover;
+           display: block;
         }
 
         .hero-content {
@@ -219,8 +219,11 @@
             }
             
             .hero-image {
-                flex: 1;
-                max-width: 450px;
+               flex: 1;
+             width: 100%;        /* Przywracamy standardowe zachowanie */
+             max-width: 450px;   /* Blokujemy rozrost na monitorze */
+             margin-left: 0;     /* Kasujemy ujemny margines z telefonu */
+             border-radius: 16px; /* Na komputerze delikatne zaokrąglenie wygląda super */
             }
             
             .hero-content {
