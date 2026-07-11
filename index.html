@@ -37,15 +37,15 @@
             padding: 0 20px 80px 20px;
         }
 
-        /* POPRAWKA: Czysty, zwarty nagłówek bez linii i z właściwą czcionką */
+        /* Kompaktowy AppBar wzorowany na aplikacjach mobilnych */
         header {
-            padding: 16px 0; /* Niski, aplikacyjny rozstaw pionowy */
-            text-align: left; /* Logo z lewej strony */
+            padding: 16px 0;
+            text-align: left;
         }
 
         header h1 {
             margin: 0;
-            font-size: 34px; /* Powrót do Twojej oryginalnej, mocnej czcionki */
+            font-size: 32px;
             font-weight: 500;
             color: #000000;
             letter-spacing: 0px;
@@ -87,15 +87,15 @@
         /* Teksty wyśrodkowane na mobile z zachowaniem większych odległości */
         .hero-marketing {
             text-align: center;
-            margin-bottom: 30px; /* Zwiększony dystans od formularza */
+            margin-bottom: 30px;
         }
 
         .hero-marketing h2 {
             font-size: 22px;
-            font-weight: 600;
+            font-weight: 500;
             line-height: 1.4;
             color: #000000;
-            margin: 0 0 16px 0; /* Większy odstęp pod nagłówkiem głównym */
+            margin: 0 0 16px 0;
         }
 
         .hero-marketing p {
@@ -193,6 +193,51 @@
             color: #4a5d49;
         }
 
+        /* NOWE STYLE DLA SEKCJI PREMIERY */
+        .coming-soon-box {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .coming-soon-box p {
+            font-size: 15px;
+            color: #4a5d49;
+            margin: 0 0 25px 0;
+        }
+
+        .store-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Efekt premium: oficjalne logo wyszarzone i delikatnie uśpione */
+        .store-badge {
+            height: 40px;
+            width: auto;
+            display: block;
+            filter: grayscale(100%);
+            opacity: 0.4;
+            user-select: none;
+            pointer-events: none; /* Blokuje klikanie, bo to tylko zapowiedź */
+        }
+
+        .badge-text {
+            font-size: 12px;
+            color: #a0b09f;
+            font-weight: 500;
+        }
+
         .footer-links {
             margin-top: 15px;
             font-size: 15px;
@@ -212,7 +257,7 @@
                 margin-bottom: 40px;
             }
             header h1 {
-                font-size: 38px; /* Odpowiednio większy font logotypu na komputerach */
+                font-size: 28px;
             }
             
             /* Równy podział 50/50 na desktopie */
@@ -235,7 +280,6 @@
                 width: 50%;
             }
             
-            /* Wersja desktopowa zachowuje elegancki styl od lewej */
             .hero-marketing {
                 text-align: left;
                 margin-bottom: 35px;
@@ -248,6 +292,10 @@
             .features {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
+            }
+
+            .coming-soon-box p {
+                font-size: 16px;
             }
         }
     </style>
@@ -295,12 +343,32 @@
                     <p>Przełam rutynę boczku i jajecznicy. Odkryj dziesiątki autorskich przepisów stworzonych dla urozmaiconego stylu życia low-carb.</p>
                 </div>
                 <div class="feature">
-                    <h4>⚡ Czwarty nagłówek</h4>
-                    <p>Tutaj będzie tekst opisujący kolejną unikalną korzyść aplikacji, kiedy tylko będzie gotowy.</p>
+                    <h4>⚡ Twój czwarty nagłówek</h4>
+                    <p>Tutaj wpiszesz tekst opisujący kolejną unikalną korzyść Twojej aplikacji, kiedy tylko go sformułujesz.</p>
                 </div>
             </div>
         </section>
 
+        <!-- NOWA SEKCJA 3: PREMIERA WKRÓTCE (Bezpieczna czasowo, efekt premium) -->
+        <section>
+            <div class="coming-soon-box">
+                <h3>Premiera już niedługo</h3>
+                <p>Aplikacja Ketobook przechodzi obecnie ostatnie testy i optymalizacje, aby zapewnić najwyższą jakość oraz płynność działania. Oficjalna premiera w sklepach odbędzie się już niebawem – zapisani na listę otrzymają powiadomienie o starcie w pierwszej kolejności.</p>
+                
+                <div class="store-badges">
+                    <div class="badge-wrapper">
+                        <img class="store-badge" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                        <span class="badge-text">Dostępne wkrótce</span>
+                    </div>
+                    <div class="badge-wrapper">
+                        <img class="store-badge" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                        <span class="badge-text">Dostępne wkrótce</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIEZMIENIONA STOPKA -->
         <section style="text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
             <div class="footer-links">
                 <a href="regulamin.html">Regulamin</a> | 
