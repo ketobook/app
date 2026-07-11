@@ -34,29 +34,31 @@
             width: 100%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px 80px 20px; /* Zwiększony dolny padding dla lepszego oddechu strony */
+            padding: 0 20px 80px 20px;
         }
 
-        /* POPRAWKA: Idealnie symetryczny nagłówek na mobile */
+        /* Kompaktowy AppBar wzorowany na aplikacjach mobilnych */
         header {
-            padding: 30px 0;
-            text-align: left;
+            padding: 16px 0; /* Niski, zwarty pasek aplikacji */
+            text-align: left; /* Logo z lewej strony */
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Subtelna linia odcinająca AppBar */
+            margin-bottom: 20px;
         }
 
         header h1 {
-            margin: 0; /* Reset domyślnych marginesów przeglądarki */
-            font-size: 34px;
-            font-weight: 500;
+            margin: 0;
+            font-size: 24px; /* Naturalna wielkość tytułu w AppBarze */
+            font-weight: 600;
             color: #000000;
-            letter-spacing: 0px;
-            line-height: 1;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
         /* HERO SECTION */
         .hero-section {
             display: flex;
             flex-direction: column; 
-            gap: 20px;
+            gap: 25px;
             width: 100%;
             margin-bottom: 40px;
         }
@@ -84,23 +86,25 @@
             justify-content: center;
         }
 
+        /* Teksty wyśrodkowane na mobile z zachowaniem większych odległości */
         .hero-marketing {
-            text-align: center;
-            margin-bottom: 25px; /* Delikatnie zwiększony odstęp od formularza */
+            text-align: center; /* Powrót do wyśrodkowania na telefonach */
+            margin-bottom: 30px; /* Zwiększony dystans od formularza */
         }
 
         .hero-marketing h2 {
             font-size: 22px;
-            font-weight: 500;
-            line-height: 1.3;
+            font-weight: 600;
+            line-height: 1.4;
             color: #000000;
-            margin: 0 0 12px 0;
+            margin: 0 0 16px 0; /* Większy odstęp pod nagłówkiem głównym */
         }
 
         .hero-marketing p {
             font-size: 15px;
             color: #4a5d49;
             margin: 0;
+            line-height: 1.6;
         }
 
         /* Formularz zapisu */
@@ -130,7 +134,6 @@
             color: #000000;
         }
 
-        /* POPRAWKA: Spójny wygląd fontu w placeholderze */
         .newsletter-box input[type="email"]::placeholder {
             font-family: 'Poppins', sans-serif;
             color: #7a8a79;
@@ -156,7 +159,7 @@
 
         /* POZOSTAŁE SEKCJE */
         section {
-            padding: 40px 0; /* Zwiększony padding sekcji dla elegancji */
+            padding: 40px 0;
             border-top: 1px solid rgba(0,0,0,0.05);
         }
 
@@ -206,26 +209,25 @@
 
         /* RESPONSIVENESS (Komputery) */
         @media (min-width: 768px) {
-            /* POPRAWKA: Elegancki, zbalansowany AppBar na desktopie */
             header {
-                text-align: left;
-                padding: 40px 0; /* Więcej przestrzeni wokół logo, równe proporcje */
+                padding: 24px 0;
+                margin-bottom: 40px;
             }
             header h1 {
-                font-size: 38px;
+                font-size: 28px;
             }
             
+            /* Równy podział 50/50 na desktopie */
             .hero-section {
                 flex-direction: row;
                 align-items: center;
-                gap: 50px; /* Zwiększony dystans między elementami */
+                gap: 60px;
             }
             
-            /* POPRAWKA: Zaokrąglenie zdjęcia powraca na desktopie, by wyglądać premium */
             .hero-image {
                 flex: 1;
                 width: 50%;
-                max-width: none; /* Usuwamy sztywne ograniczenie 450px */  
+                max-width: none;
                 margin-left: 0;     
                 border-radius: 16px; 
             }
@@ -235,16 +237,16 @@
                 width: 50%;
             }
             
+            /* Wersja desktopowa zachowuje elegancki styl od lewej */
             .hero-marketing {
                 text-align: left;
-                margin-bottom: 30px;
+                margin-bottom: 35px;
             }
             
             .hero-marketing h2 {
                 font-size: 28px;
             }
 
-            /* POPRAWKA: Symetryczny układ 2x2 dla czterech kafelków */
             .features {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
@@ -294,10 +296,9 @@
                     <h4>💎 Menu premium bez monotonii</h4>
                     <p>Przełam rutynę boczku i jajecznicy. Odkryj dziesiątki autorskich przepisów stworzonych dla urozmaiconego stylu życia low-carb.</p>
                 </div>
-                <!-- NOWY CZWARTY KAFELEK (Zapas) -->
                 <div class="feature">
-                    <h4>⚡ Twój czwarty nagłówek</h4>
-                    <p>Tutaj wpiszesz tekst opisujący kolejną unikalną korzyść Twojej aplikacji, kiedy tylko go sformułujesz.</p>
+                    <h4>⚡ Tu czwarty nagłówek</h4>
+                    <p>Tutaj będzie tekst opisujący kolejną unikalną korzyść aplikacji, kiedy tylko będzie gotowy.</p>
                 </div>
             </div>
         </section>
@@ -305,7 +306,7 @@
         <section style="text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
             <div class="footer-links">
                 <a href="regulamin.html">Regulamin</a> | 
-                <a href="polityka-prywatnosci.html">Polityka Privacy</a>
+                <a href="polityka-prywatnosci.html">Polityka Prywatności</a>
             </div>
         </section>
     </div>
