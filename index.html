@@ -3,352 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ketobook</title>
+    <title>Ketobook - Twoja aplikacja keto i low-carb</title>
+    <!-- Import czcionki Poppins z Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 18px;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #2c3e2b;
             line-height: 1.6;
             background-color: #e8f0e6;
         }
         .container {
-            width: 80%;
-            max-width: 1200px;
+            width: 90%;
+            max-width: 600px; /* Zwężone pod idealny widok mobilny/landing page */
             margin: 0 auto;
-            padding: 0 20px 80px 20px;
+            padding: 0 15px 60px 15px;
             box-sizing: border-box;
         }
         header {
-            background-color: #e8f0e6;
-            padding: 40px 20px;
-            margin: 0 auto;
+            padding: 30px 0 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            color: #1b2e1a;
+            letter-spacing: -0.5px;
         }
         .hero-image {
             width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
+            margin: 15px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
         }
         .hero-image img {
             width: 100%;
             height: auto;
+            aspect-ratio: 1 / 1; /* Wymuszony format kwadratu dla Twojej nowej grafiki */
             object-fit: cover; 
-            max-height: 800px; 
             display: block;
         }
-        .project-overview {
+        .hero-marketing {
+            text-align: center;
+            padding: 15px 0;
+        }
+        .hero-marketing h2 {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #1b2e1a;
+            margin: 0 0 12px 0;
+        }
+        .hero-marketing p {
+            font-size: 15px;
+            color: #4a5d49;
+            margin: 0 0 24px 0;
+        }
+        /* Kontener przygotowany pod wklejenie formularza z Brevo */
+        .newsletter-box {
+            background-color: #fffef9;
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
+        }
+        /* Bazowe style dla formularza (nadpiszą się lub zgrają z kodem z Brevo) */
+        .newsletter-box form {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-            padding: 40px 0;
-        }
-        .project-image {
-            flex: 0 0 300px;
-            max-width: 300px;
-        }
-        .project-description {
-            flex: 1;
-        }
-        .project-image img {
+            flex-direction: column;
+            gap: 12px;
             width: 100%;
-            height: auto;
-            max-height: 640px;
-            object-fit: contain;
+        }
+        .newsletter-box input[type="email"] {
+            padding: 14px;
+            border: 2px solid #cbd5cb;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .newsletter-box input[type="email"]:focus {
+            border-color: #7fa37c;
+        }
+        .newsletter-box button, .newsletter-box input[type="submit"] {
+            background-color: #4e7c4b;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+        .newsletter-box button:hover {
+            background-color: #3d633a;
+        }
+        section {
+            padding: 25px 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1b2e1a;
+            margin: 0 0 15px 0;
         }
         .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px 0;
-            max-width: 100%;
-            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
         .feature {
-            background-color: #e8f0e6;
+            background-color: #fffef9;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+        }
+        .feature h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1b2e1a;
+        }
+        .feature p {
+            margin: 0;
+            font-size: 14px;
+            color: #4a5d49;
         }
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            padding: 40px 0;
-            max-width: 100%;
-            margin: 0 auto;
+            gap: 8px;
         }
         .tech-stack span {
             background-color: #fffef9;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 16px;
+            font-size: 13px;
+            color: #4a5d49;
+            font-weight: 500;
         }
-        .language-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            gap: 10px;
-            z-index: 1000;
+        .contact-text {
+            font-size: 14px;
+            color: #4a5d49;
         }
-        .language-toggle a {
+        .contact-text a {
+            color: #4e7c4b;
             text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        .language-toggle a.active {
-            color: #007bff;
-        }
-        .lang-content {
-            display: none;
-        }
-        .lang-content.active {
-            display: block;
-        }
-        section {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        @media (max-width: 768px) {
-            .container {
-                width: 100%;
-                padding: 0 15px 40px 15px;
-            }
-            header {
-                width: 100%;
-                padding: 20px 15px;
-            }
-            .hero-image {
-                margin: 0;
-                padding: 0; 
-                width: 100vw; 
-            }
-            section {
-                padding: 10px 0;
-            }
-            .project-overview {
-                gap: 15px;
-                padding: 20px 0;
-                flex-direction: column;
-                align-items: center;
-            }
-            .project-image {
-                max-width: 100%;
-            }
-            .features {
-                gap: 10px;
-                padding: 20px 0;
-            }
-            .tech-stack {
-                padding: 20px 0;
-            }
-            section + section {
-                margin-top: 20px;
-            }
+            font-weight: 600;
         }
 
-        @media (max-width: 480px) {
-            body {
-                font-size: 16px;
-            }
-            .feature {
-                padding: 15px;
-            }
-            .tech-stack span {
-                padding: 6px 12px;
-                font-size: 14px;
-            }
-            .language-toggle {
-                top: 5px;
-                right: 5px;
-                padding: 5px;
-            }
+        /* Optymalizacja dla nieco większych ekranów (tablet/desktop) */
+        @media (min-width: 768px) {
+            html, body { font-size: 17px; }
+            .container { max-width: 650px; }
+            header h1 { font-size: 38px; }
+            .hero-marketing h2 { font-size: 28px; }
         }
     </style>
 </head>
 <body>
-    <div class="language-toggle">
-        <a href="#" onclick="switchLanguage('en')" class="lang-switch en">EN</a>
-        <a href="#" onclick="switchLanguage('pl')" class="lang-switch pl active">PL</a>
-    </div>
 
     <div class="container">
-        <div id="pl-content" class="lang-content active pl">
-            <header>
-                <h1>Ketobook</h1>
-                <p>Autorska aplikacja do zarządzania przepisami diety ketogenicznej i niskowęglowodanowej.</p>
-            </header>
+        <header>
+            <h1>Ketobook</h1>
+        </header>
 
-            <section>
-                <div class="hero-image">
-                    <img src="ketobook-screens.png" alt="KetoBook Screen">
-                </div>
-            </section>
-
-            <section>
-                <div class="project-overview">
-                    <div class="project-image">
-                        <img src="ketobook-gif.gif" alt="KetoBook Demo">
-                    </div>
-                    <div class="project-description">
-                        <p>KetoBook to kompleksowe rozwiązanie dla osób na diecie ketogenicznej i niskowęglowodanowej.</p>
-                        <p>Aplikacja powstała z myślą o uporządkowaniu i ułatwieniu dostępu do sprawdzonych przepisów z rozpisanym macro i poradami, z możliwością personalizacji oraz tworzenia i zarządzania własnymi przepisami.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Kluczowe funkcjonalności</h2>
-                <div class="features">
-                    <div class="feature">
-                        <h3>📱 Zarządzanie Przepisami</h3>
-                        <p>Baza autorskich przepisów. Dodawanie, edycja i usuwanie własnych przepisów z intuicyjnym interfejsem</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🔐 Autentykacja Użytkowników</h3>
-                        <p>Bezpieczne logowanie przez Firebase Auth i Google Sign-In</p>
-                    </div>
-                    <div class="feature">
-                        <h3>⭐ Listy Ulubionych</h3>
-                        <p>Personalizowana lista ulubionych przepisów z kategoryzacją</p>
-                    </div>
-                    <div class="feature">
-                        <h3>💎 Model Freemium</h3>
-                        <p>Darmowa wersja z częściowym dostępem do bazy przepisów i funkcjonalności + wersja premium z pełnymi możliwościami</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Technologie</h2>
-                <div class="tech-stack">
-                    <span>Flutter & Dart</span>
-                    <span>Firebase Cloud</span>
-                    <span>Firebase Auth</span>
-                    <span>Google Sign-In</span>
-                    <span>BLoC/Cubit</span>
-                    <span>GetIt</span>
-                    <span>Git</span>
-                    <span>Freezed</span>
-                    <span>Testy jednostkowe</span>
-                </div>
-            </section>
-
-            <section>
-                <h2>Status projektu</h2>
-                <p>Obecnie finalizuję pierwszą publiczną wersję aplikacji, która będzie oferować:</p>
-                <ul>
-                    <li>Ograniczony dostęp do bazy przepisów</li>
-                    <li>Dodawanie własnych przepisów z określonym limitem</li>
-                    <li>Wszystkie funkcje zarządzania przepisami</li>
-                </ul>
-                <p>Na dalszym etapie planuję wprowadzić wersję premium z rozszerzonymi funkcjonalnościami jak i zupełnie nowymi.</p>
-            </section>
-
-            <section>
-                <h2>Kontakt</h2>
-                <p>Jeśli są państwo zainteresowani szczegółami technicznymi projektu, zapraszam do kontaktu: esteraszamli@gmail.com.</p>
-            </section>
+        <!-- Sekcja 1: Twoja nowa kwadratowa grafika -->
+        <div class="hero-image">
+            <img src="ketobook-screens.png" alt="Ekrany aplikacji Ketobook">
         </div>
 
-        <div id="en-content" class="lang-content en" style="display:none;">
-            <header>
-                <h1>KetoBook</h1>
-                <p>Original mobile app for managing ketogenic and low-carb recipes.</p>
-                <p><em>Note: Due to the commercial nature of the project, source code is private. Code fragments available upon request during the recruitment process.</em></p>
-            </header>
-
-            <section>
-                <div class="hero-image">
-                    <img src="ketobook-screens.png" alt="KetoBook Screen">
-                </div>
-            </section>
-
-            <section>
-                <div class="project-overview">
-                    <div class="project-image">
-                        <img src="ketobook-gif.gif" alt="KetoBook Demo">
-                    </div>
-                    <div class="project-description">
-                        <p>KetoBook is a comprehensive solution for people on a ketogenic and low-carb diet.</p>
-                        <p>The app was created to organize and facilitate access to proven recipes with macros and tips, with the ability to personalize and create and manage your own recipes.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Key Functionalities</h2>
-                <div class="features">
-                    <div class="feature">
-                        <h3>📱 Recipe Management</h3>
-                        <p>Collection of original recipes. Adding, editing, and deleting custom recipes with an intuitive interface</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🔐 User Authentication</h3>
-                        <p>Secure login through Firebase Auth and Google Sign-In</p>
-                    </div>
-                    <div class="feature">
-                        <h3>⭐ Favorites List</h3>
-                        <p>Personalized list of favorite recipes with categorization</p>
-                    </div>
-                    <div class="feature">
-                        <h3>💎 Freemium Model</h3>
-                        <p>Free: limited recipe access and features. Premium: full access to all recipes and features</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Technologies</h2>
-                <div class="tech-stack">
-                    <span>Flutter & Dart</span>
-                    <span>Firebase Cloud</span>
-                    <span>Firebase Auth</span>
-                    <span>Google Sign-In</span>
-                    <span>BLoC/Cubit</span>
-                    <span>GetIt</span>
-                    <span>Git</span>
-                    <span>Freezed</span>
-                    <span>Unit Tests</span>
-                </div>
-            </section>
-
-            <section>
-                <h2>Project Status</h2>
-                <p>I'm currently finalizing the first public version of the app, which will offer:</p>
-                <ul>
-                    <li>Limited access to recipe database</li>
-                    <li>Adding custom recipes with a specific limit</li>
-                    <li>All recipe management features</li>
-                </ul>
-                <p>At a later stage, I plan to introduce a premium version with enhanced features as well as completely new ones.</p>
-            </section>
-
-            <section>
-                <h2>Contact</h2>
-                <p>For technical details about the project, please contact me at: esteraszamli@gmail.com.</p>
-            </section>
+        <!-- Sekcja 2: Krótki, mocny tekst reklamowy od razu pod zdjęciem -->
+        <div class="hero-marketing">
+            <h2>Koniec z nudną dietą. Odkryj przepisy, które redukują wagę i zachwycają smakiem.</h2>
+            <p>Ketobook to nowa, intuicyjna aplikacja z pysznymi przepisami keto i low-carb. Zapisz się na listę oczekujących, odbierz darmową Ściągawkę Zakupową i dowiedz się o premierze jako pierwszy!</p>
         </div>
+
+        <!-- Sekcja 3: Formularz zapisu (Brevo) osadzony wysoko -->
+        <div class="newsletter-box">
+            <!-- TUTAJ WKLEJ KOD FORMULARZA Z BREVO -->
+            <!-- Poniższy formularz służy jako estetyczny placeholder, dopóki nie wkleisz kodu z Brevo -->
+            <form action="#" method="POST">
+                <input type="email" placeholder="Twój najlepszy e-mail..." required>
+                <button type="submit">CHCĘ DARMOWĄ ŚCIĄGAWKĘ + DOSTĘP!</button>
+            </form>
+            <!-- KONIEC MIEJSCA NA KOD Z BREVO -->
+        </div>
+
+        <!-- Sekcja 4: Realistyczne korzyści aplikacji -->
+        <section>
+            <h3>Dlaczego Ketobook?</h3>
+            <div class="features">
+                <div class="feature">
+                    <h4>📱 Koniec z ręcznym liczeniem makro</h4>
+                    <p>Każdy przepis posiada precyzyjnie wyliczone białka, tłuszcze, węglowodany netto oraz kalorie. Ty skupiasz się na gotowaniu, aplikacja dba o resztę.</p>
+                </div>
+                <div class="feature">
+                    <h4>🛒 Szybkie zakupy, proste składniki</h4>
+                    <p>Przepisy opierają się na produktach, które bez problemu kupisz w każdym popularnym dyskoncie. Intuicyjna lista zakupów maksymalnie skróci Twój czas w sklepie.</p>
+                </div>
+                <div class="feature">
+                    <h4>💎 Zróżnicowane menu bez monotonii</h4>
+                    <p>Przełam rutynę boczku i jajecznicy. Odkryj dziesiątki autorskich, sprawdzonych przepisów przygotowanych z myślą o urozmaiconym stylu życia low-carb.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekcja 5: Technologie (Możesz zostawić jako dowód profesjonalizmu "Ketobook Team") -->
+        <section>
+            <h3>Technologia i stabilność</h3>
+            <div class="tech-stack">
+                <span>Flutter & Dart</span>
+                <span>Firebase Cloud</span>
+                <span>Firebase Auth</span>
+                <span>BLoC/Cubit</span>
+                <span>Hive Cache</span>
+                <span>Secure Storage</span>
+            </div>
+        </section>
+
+        <!-- Sekcja 6: Stopka / Kontakt -->
+        <section>
+            <h3>Kontakt</h3>
+            <p class="contact-text">W przypadku pytań dotyczących projektu lub współpracy, zapraszamy do kontaktu: <a href="mailto:esteraszamli@gmail.com">esteraszamli@gmail.com</a>.</p>
+        </section>
     </div>
 
-    <script>
-        function switchLanguage(lang) {
-            document.querySelectorAll('.lang-content').forEach(el => {
-                el.style.display = 'none';
-            });
-            document.querySelector(`#${lang}-content`).style.display = 'block';
-            document.querySelectorAll('.lang-switch').forEach(el => {
-                el.classList.remove('active');
-            });
-            document.querySelector(`.lang-switch.${lang}`).classList.add('active');
-        }
-    </script>
 </body>
 </html>
