@@ -22,7 +22,6 @@
             font-size: 16px;
             color: #000000;
             line-height: 1.6;
-            /* ZMIANA 1: Tło całej strony zmienione na 100% białe */
             background-color: #ffffff;
             box-sizing: border-box;
         }
@@ -35,21 +34,22 @@
             width: 100%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px 60px 20px;
+            padding: 0 20px 80px 20px; /* Zwiększony dolny padding dla lepszego oddechu strony */
         }
 
+        /* POPRAWKA: Idealnie symetryczny nagłówek na mobile */
         header {
-            padding: 15px 0;
-            text-align: center;
+            padding: 30px 0;
+            text-align: left;
         }
 
         header h1 {
-            margin: 0;
+            margin: 0; /* Reset domyślnych marginesów przeglądarki */
             font-size: 34px;
-            /* ZMIANA 2: Odchudzona czcionka nagłówka */
             font-weight: 500;
             color: #000000;
             letter-spacing: 0px;
+            line-height: 1;
         }
 
         /* HERO SECTION */
@@ -61,10 +61,11 @@
             margin-bottom: 40px;
         }
 
+        /* Grafika od brzegu do brzegu na telefonie */
         .hero-image {
-           width: 100vw;          /* Cała szerokość ekranu telefonu */
-           margin-left: -20px;    /* Skasowanie bocznego marginesu strony */
-           border-radius: 0;      /* Brak zaokrągleń na telefonie */
+           width: 100vw;          
+           margin-left: -20px;    
+           border-radius: 0;      
            overflow: hidden;
         }
 
@@ -85,7 +86,7 @@
 
         .hero-marketing {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px; /* Delikatnie zwiększony odstęp od formularza */
         }
 
         .hero-marketing h2 {
@@ -104,7 +105,6 @@
 
         /* Formularz zapisu */
         .newsletter-box {
-            /* ZMIANA 3: Okienko formularza zmienione na ultra jasny szary */
             background-color: #f7f7f7;
             padding: 25px 20px;
             border-radius: 12px;
@@ -127,10 +127,16 @@
             box-sizing: border-box;
             outline: none;
             background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* POPRAWKA: Spójny wygląd fontu w placeholderze */
+        .newsletter-box input[type="email"]::placeholder {
+            font-family: 'Poppins', sans-serif;
+            color: #7a8a79;
         }
 
         .newsletter-box button {
-            /* ZMIANA 4: Kolor przycisku z aplikacji - ARGB(255, 132, 158, 74) to HEX #849e4a */
             background-color: #849e4a;
             color: #ffffff;
             border: none;
@@ -150,7 +156,7 @@
 
         /* POZOSTAŁE SEKCJE */
         section {
-            padding: 30px 0;
+            padding: 40px 0; /* Zwiększony padding sekcji dla elegancji */
             border-top: 1px solid rgba(0,0,0,0.05);
         }
 
@@ -168,7 +174,6 @@
         }
 
         .feature {
-            /* ZMIANA 5: Kafelki zmienione na ultra jasny szary */
             background-color: #f7f7f7;
             padding: 20px;
             border-radius: 10px;
@@ -193,20 +198,18 @@
         }
 
         .footer-links a {
-            /* ZMIANA 6: Kolor linków w stopce zmieniony na czarny */
             color: #000000;
             text-decoration: underline;
             margin: 0 10px;
             font-weight: 500;
         }
 
-        /* ZMIANA SEKCJI TECHNOLOGII - USUNIĘTA Z KODU */
-
         /* RESPONSIVENESS (Komputery) */
         @media (min-width: 768px) {
+            /* POPRAWKA: Elegancki, zbalansowany AppBar na desktopie */
             header {
                 text-align: left;
-                padding: 25px 0;
+                padding: 40px 0; /* Więcej przestrzeni wokół logo, równe proporcje */
             }
             header h1 {
                 font-size: 38px;
@@ -215,15 +218,16 @@
             .hero-section {
                 flex-direction: row;
                 align-items: center;
-                gap: 40px;
+                gap: 50px; /* Zwiększony dystans między elementami */
             }
             
+            /* POPRAWKA: Zaokrąglenie zdjęcia powraca na desktopie, by wyglądać premium */
             .hero-image {
-               flex: 1;
-             width: 100%;        /* Przywracamy standardowe zachowanie */
-             max-width: 450px;   /* Blokujemy rozrost na monitorze */
-             margin-left: 0;     /* Kasujemy ujemny margines z telefonu */
-             border-radius: 0;
+                flex: 1;
+                width: 100%;        
+                max-width: 450px;   
+                margin-left: 0;     
+                border-radius: 16px; 
             }
             
             .hero-content {
@@ -232,14 +236,16 @@
             
             .hero-marketing {
                 text-align: left;
+                margin-bottom: 30px;
             }
             
             .hero-marketing h2 {
                 font-size: 28px;
             }
 
+            /* POPRAWKA: Symetryczny układ 2x2 dla czterech kafelków */
             .features {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
         }
@@ -254,7 +260,6 @@
 
         <div class="hero-section">
             <div class="hero-image">
-                <!-- Twoja nowa kwadratowa grafika z Canvy -->
                 <img src="ketobook-www-1.png" alt="Ekrany aplikacji Ketobook">
             </div>
             
@@ -288,14 +293,18 @@
                     <h4>💎 Menu premium bez monotonii</h4>
                     <p>Przełam rutynę boczku i jajecznicy. Odkryj dziesiątki autorskich przepisów stworzonych dla urozmaiconego stylu życia low-carb.</p>
                 </div>
+                <!-- NOWY CZWARTY KAFELEK (Zapas) -->
+                <div class="feature">
+                    <h4>⚡ Twój czwarty nagłówek</h4>
+                    <p>Tutaj wpiszesz tekst opisujący kolejną unikalną korzyść Twojej aplikacji, kiedy tylko go sformułujesz.</p>
+                </div>
             </div>
         </section>
 
-        <!-- ZMIANA 7: Bezpośredni mail usunięty ze stopki ze względów bezpieczeństwa -->
         <section style="text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
             <div class="footer-links">
                 <a href="regulamin.html">Regulamin</a> | 
-                <a href="polityka-prywatnosci.html">Polityka Prywatności</a>
+                <a href="polityka-prywatnosci.html">Polityka Privacy</a>
             </div>
         </section>
     </div>
