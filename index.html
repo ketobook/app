@@ -137,6 +137,11 @@
             color: #7a8a79;
         }
 
+        /* Styl ukrywający pole zabezpieczające anty-bot przed ludźmi */
+        .newsletter-box input.anti-bot {
+            display: none !important;
+        }
+
         .newsletter-box button {
             background-color: #849e4a;
             color: #ffffff;
@@ -319,8 +324,14 @@
                 </div>
 
                 <div class="newsletter-box">
-                    <form action="#" method="POST">
-                        <input type="email" placeholder="Twój adres e-mail..." required>
+                    <form action="https://5c6378f9.sibforms.com/serve/MUIFAF-QO5hQApyVSvJI0yf9xjMzcAy-3BjZ9JdgSF3EJ7CFH-vfw_aretLSR_RyXZ4ct3M7Me_xka-j3zWJ6_WjBHdfwdH4jLLUhAGQAUq07d2Bf3DTW5MKvuakwCVzz69L-G6xZ9EfLWYq17x44K5_pv3cuYhR1WMVSE9nIVRkmhEf6hROrqK9AWC5TsvlfoShRdZzd7c0ltwNiA==" method="POST">
+                        <input type="email" id="EMAIL" name="EMAIL" placeholder="Twój adres e-mail..." autocomplete="off" required>
+                        
+                        <!-- Ukryte parametry techniczne Brevo oraz ochrona honeypot przed botami -->
+                        <input type="text" name="email_address_check" value="" class="anti-bot">
+                        <input type="hidden" name="locale" value="en">
+                        <input type="hidden" name="html_type" value="simple">
+                        
                         <button type="submit">CHCĘ DARMOWY BONUS + DOSTĘP!</button>
                     </form>
                 </div>
@@ -372,7 +383,7 @@
         <section style="text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
             <div class="footer-links">
                 <a href="regulamin.html">Regulamin</a> | 
-                <a href="polityka-prywatnosci.html">Polityka Prywatności</a>
+                <a href="polityka-prywatnosci.html">Polityka Privacy</a>
             </div>
         </section>
     </div>
