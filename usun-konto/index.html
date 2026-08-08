@@ -23,7 +23,7 @@
 
         .container {
             max-width: 800px;
-            margin: 40px auto;
+            margin: 40px auto 20px auto;
             background: var(--card-bg);
             padding: 40px;
             border-radius: 12px;
@@ -31,7 +31,7 @@
         }
 
         h1 {
-            color: var(--primary-color);
+            color: var(--text-color);
             margin-top: 0;
             font-size: 28px;
             border-bottom: 2px solid #e0e0e0;
@@ -49,13 +49,12 @@
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         a {
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: 600;
         }
 
         a:hover {
@@ -66,8 +65,24 @@
             background-color: #f0f7f0;
             border-left: 4px solid var(--primary-color);
             padding: 15px 20px;
-            margin-top: 20px;
+            margin-top: 15px;
             border-radius: 0 8px 8px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin: 30px auto;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        footer a {
+            color: #666666;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
         }
     </style>
 </head>
@@ -76,18 +91,17 @@
 <div class="container">
     <h1>Usuwanie konta i danych użytkownika</h1>
     
-    <p>Szanujemy Twoją prywatność oraz prawo do zarządzania swoimi danymi osobowymi. W aplikacji <strong>Ketobook</strong> możesz w każdej chwili usunąć swoje konto oraz powiązane z nim dane.</p>
+    <p>Szanujemy Twoją prywatność oraz prawo do zarządzania swoimi danymi osobowymi. W aplikacji Ketobook możesz w każdej chwili usunąć swoje konto oraz powiązane z nim dane.</p>
 
     <h2>Sposób 1: Usuwanie konta bezpośrednio w aplikacji</h2>
     <p>Najszybszym sposobem na usunięcie konta jest skorzystanie z opcji dostępnej wewnątrz aplikacji Ketobook:</p>
     <ol>
-        <li>Otwórz aplikację <strong>Ketobook</strong> i zaloguj się na swoje konto.</li>
-        <li>Przejdź do zakładki <strong>Moje konto</strong>.</li>
-        <li>W sekcji <strong>Konto<strong> wybierz opcję <strong>Usuń konto</strong>.</li>
+        <li>Otwórz aplikację Ketobook i zaloguj się na swoje konto.</li>
+        <li>Przejdź do zakładki Moje konto.</li>
+        <li>W sekcji Konto wybierz opcję Usuń konto.</li>
         <li>Potwierdź chęć usunięcia konta wpisując hasło.</li>
     </ol>
     <p>Konto oraz wszystkie przypisane do niego dane zostaną nieodwracalnie i trwale usunięte z naszej bazy.</p>
-    <li><strong>Kopie zapasowe:</strong> Ze względów bezpieczeństwa oraz technicznych (spójność bazy Firebase), dane z kopii zapasowych i logów systemowych są automatycznie i trwale nadpisywane/usuwane w cyklu technicznym wynoszącym do 180 dni.</li>
 
     <h2>Sposób 2: Zgłoszenie mailowe</h2>
     <p>Jeśli nie masz możliwości zalogowania się do aplikacji lub odinstalowałeś/aś ją z urządzenia, możesz wysłać do nas prośbę o ręczne usunięcie konta.</p>
@@ -98,15 +112,22 @@
         <strong>Treść:</strong> Podaj adres e-mail powiązany z kontem, które ma zostać usunięte.
     </div>
 
-    <h2>Jakie dane zostaną usunięte?</h2>
+    <h2>Jakie dane zostaną usunięte i jak długo są przechowywane?</h2>
     <p>Po przetworzeniu żądania usuwamy:</p>
     <ul>
         <li>Dane identyfikacyjne (adres e-mail, nazwa użytkownika),</li>
-        <li>Zapisane preferencje, plany posilków, własne wpisy, śledzenie postępów,</li>
+        <li>Zapisane preferencje, plany posiłków, własne wpisy oraz śledzenie postępów,</li>
         <li>Historię aktywności w aplikacji.</li>
     </ul>
     <p>Zgłoszenia mailowe realizujemy w ciągu maksymalnie 14 dni od momentu odebrania wiadomości.</p>
+    <p>Ze względów bezpieczeństwa oraz technicznych (spójność bazy Firebase), dane z kopii zapasowych i logów systemowych są automatycznie i trwale nadpisywane w cyklu technicznym wynoszącym do 180 dni.</p>
 </div>
+
+<footer>
+    <a href="https://ketobook.pl">Strona główna</a> | 
+    <a href="https://ketobook.pl/regulamin">Regulamin</a> | 
+    <a href="https://ketobook.pl/polityka-prywatnosci">Polityka prywatności</a>
+</footer>
 
 </body>
 </html>
