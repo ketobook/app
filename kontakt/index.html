@@ -61,14 +61,56 @@
             border-radius: 0 8px 8px 0;
         }
 
-        .faq-item {
-            margin-bottom: 20px;
+        /* Stylizacja rozwijanego FAQ */
+        details {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 12px 16px;
+            transition: all 0.2s ease;
         }
 
-        .faq-question {
+        details[open] {
+            border-color: var(--primary-color);
+            background-color: #fafafa;
+        }
+
+        summary {
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            list-style: none; /* ukrywa domyślną strzałkę w niektórych przeglądarkach */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none; /* ukrywa domyślną strzałkę w Safari/Chrome */
+        }
+
+        summary::after {
+            content: "+";
+            font-size: 18px;
             font-weight: bold;
             color: var(--primary-color);
-            margin-bottom: 4px;
+            margin-left: 10px;
+        }
+
+        details[open] summary::after {
+            content: "−";
+        }
+
+        summary:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #e0e0e0;
+            color: #555555;
         }
 
         footer {
@@ -96,29 +138,41 @@
     <p>Masz pytanie dotyczące aplikacji Ketobook, napotkałeś/aś problem techniczny lub chcesz podzielić się opinią? Jesteśmy do Twojej dyspozycji!</p>
 
     <h2>Napisz do nas</h2>
-    <p>Odpowiadamy na wiadomości najszybciej jak to możliwe (zazwyczaj w ciągu 24-48 godzin w dni robocze).</p>
 
     <div class="contact-box">
-        Wyślij wiadomość e-mail na adres: <a href="mailto:info@ketobook.pl">info@ketobook.pl</a><br>
-        <strong>Wskazówka:</strong> Jeśli zgłoszenie dotyczy błędu w aplikacji, podaj model urządzenia oraz wersję systemu operacyjnego (iOS/Android).
+        <strong>Wskazówka:</strong> Najszybszym sposobem na uzyskanie pomocy technicznej jest użycie opcji <strong>Wsparcie techniczne</strong> bezpośrednio w aplikacji (znajdziesz ją w zakladce <em>Moje konto</em>). Aplikacja automatycznie dołączy potrzebne informacje techniczne, co pozwoli nam szybciej rozwiązać Twój problem.<br><br>
+        Możesz również napisać do nas bezpośrednio na e-mail: <a href="mailto:info@ketobook.pl">info@ketobook.pl</a>. Odpowiadamy zazwyczaj w ciągu 48 godzin w dni robocze.
     </div>
 
     <h2>Często zadawane pytania (FAQ)</h2>
 
-    <div class="faq-item">
-        <div class="faq-question">Jak zresetować hasło do konta?</div>
-        <div class="faq-answer">Na ekranie logowania w aplikacji wybierz opcję "Zapomniałem hasła", wpisz swój adres e-mail i postępuj zgodnie z instrukcjami wysłanymi w wiadomości.</div>
-    </div>
+    <details>
+        <summary>Jak zresetować hasło do konta?</summary>
+        <div class="faq-answer">
+            Na ekranie logowania w aplikacji wybierz opcję "Zapomniałem hasła", wpisz swój adres e-mail i postępuj zgodnie z instrukcjami wysłanymi w wiadomości.
+        </div>
+    </details>
 
-    <div class="faq-item">
-        <div class="faq-question">Jak usunąć konto z aplikacji?</div>
-        <div class="faq-answer">Możesz usunąć konto bezpośrednio w ustawieniach aplikacji (Moje konto -> Usuń konto) lub składając wniosek na naszej stronie <a href="https://ketobook.pl/usun-konto">Usuwanie konta</a>.</div>
-    </div>
+    <details>
+        <summary>Jak usunąć konto z aplikacji?</summary>
+        <div class="faq-answer">
+            Możesz usunąć konto bezpośrednio w ustawieniach aplikacji (Moje konto &rarr; Usuń konto) lub składając wniosek na naszej stronie <a href="https://ketobook.pl/usun-konto">Usuwanie konta</a>.
+        </div>
+    </details>
 
-    <div class="faq-item">
-        <div class="faq-question">Czy aplikacja działa w trybie offline?</div>
-        <div class="faq-answer">Do aktualizacji bazy przepisów i synchronicznego zapisywania danych wymagane jest aktywne połączenie z Internetem.</div>
-    </div>
+    <details>
+        <summary>Czy aplikacja działa w trybie offline?</summary>
+        <div class="faq-answer">
+            Do aktualizacji bazy przepisów, zapisywania ulubionych dań i synchronizacji danych wymagane jest aktywne połączenie z Internetem.
+        </div>
+    </details>
+
+    <details>
+        <summary>Gdzie zgłaszać błędy w działaniu aplikacji?</summary>
+        <div class="faq-answer">
+            Błędy możesz zgłaszać bezpośrednio z poziomu aplikacji (Profil &rarr; Wsparcie techniczne) lub wysyłając wiadomość na adres <a href="mailto:info@ketobook.pl">info@ketobook.pl</a>.
+        </div>
+    </details>
 </div>
 
 <footer>
