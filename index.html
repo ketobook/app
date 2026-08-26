@@ -21,7 +21,7 @@
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
             color: #000000;
-            line-height: 1.6;
+            line-height: 1.5;
             background-color: #ffffff;
             box-sizing: border-box;
         }
@@ -34,18 +34,18 @@
             width: 100%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px 80px 20px;
+            padding: 0 20px 60px 20px;
         }
 
-        /* Kompaktowy AppBar wzorowany na aplikacjach mobilnych */
+        /* AppBar */
         header {
-            padding: 16px 0;
+            padding: 16px 0 12px 0;
             text-align: left;
         }
 
         header h1 {
             margin: 0;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 500;
             color: #000000;
             letter-spacing: 0px;
@@ -56,26 +56,24 @@
         .hero-section {
             display: flex;
             flex-direction: column; 
-            gap: 25px;
+            gap: 20px;
             width: 100%;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
         }
 
-        /* Grafika od brzegu do brzegu na telefonie */
+        /* Grafika na mobile */
         .hero-image {
            width: 100vw;          
-           margin-left: calc(-50vw + 50%);   
-           margin-right: calc(-50vw + 50%); 
-           border-radius: 0;      
+           margin-left: -20px;    
            overflow: hidden;
            display: flex;
-           justify-content: center; 
+           justify-content: center;
+           align-items: center;
         }
 
         .hero-image img {
            width: 100%;
            height: auto;
-           aspect-ratio: 1000 / 1200;
            object-fit: contain;
            display: block;
         }
@@ -87,47 +85,46 @@
             justify-content: center;
         }
 
-        /* Teksty wyśrodkowane na mobile z zachowaniem większych odległości */
         .hero-marketing {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .hero-marketing h2 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 500;
-            line-height: 1.4;
+            line-height: 1.35;
             color: #000000;
-            margin: 0 0 16px 0;
+            margin: 0 0 10px 0;
         }
 
         .hero-marketing p {
-            font-size: 15px;
+            font-size: 14px;
             color: #4a5d49;
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         /* Formularz zapisu */
         .newsletter-box {
             background-color: #f7f7f7;
-            padding: 25px 20px;
+            padding: 18px 16px;
             border-radius: 12px;
         }
 
         .newsletter-box form {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             width: 100%;
         }
 
         .newsletter-box input[type="email"] {
-            padding: 14px;
+            padding: 12px;
             border: 2px solid #cbd5cb;
             border-radius: 8px;
             font-family: 'Poppins', sans-serif;
-            font-size: 15px;
+            font-size: 14px;
             width: 100%;
             box-sizing: border-box;
             outline: none;
@@ -140,7 +137,6 @@
             color: #7a8a79;
         }
 
-        /* Styl ukrywający pole zabezpieczające anty-bot przed ludźmi */
         .newsletter-box input.anti-bot {
             display: none !important;
         }
@@ -149,10 +145,10 @@
             background-color: #849e4a;
             color: #ffffff;
             border: none;
-            padding: 14px;
+            padding: 12px;
             border-radius: 8px;
             font-family: 'Poppins', sans-serif;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             width: 100%;
@@ -165,51 +161,52 @@
 
         /* POZOSTAŁE SEKCJE */
         section {
-            padding: 40px 0;
+            padding: 30px 0;
             border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         section h3 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 500;
             color: #000000;
-            margin: 0 0 20px 0;
+            margin: 0 0 16px 0;
         }
 
         .features {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
+            gap: 16px;
         }
 
+        /* KARTY Z CIENIEM */
         .feature {
             background-color: #f7f7f7;
-            padding: 24px;
+            padding: 20px;
             border-radius: 12px;
             border: none;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .feature:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.11);
         }
 
         .feature h4 {
-            margin: 0 0 8px 0;
-            font-size: 17px;
+            margin: 0 0 6px 0;
+            font-size: 16px;
             font-weight: 500;
             color: #000000;
         }
 
         .feature p {
             margin: 0;
-            font-size: 15px;
+            font-size: 14px;
             color: #4a5d49;
         }
 
-        /* NOWE STYLE DLA SEKCJI PREMIERY */
+        /* SEKCJA PREMIERY */
         .coming-soon-box {
             text-align: center;
             max-width: 700px;
@@ -217,9 +214,9 @@
         }
 
         .coming-soon-box p {
-            font-size: 15px;
+            font-size: 14px;
             color: #4a5d49;
-            margin: 0 0 25px 0;
+            margin: 0 0 20px 0;
         }
 
         .store-badges {
@@ -237,15 +234,14 @@
             gap: 6px;
         }
 
-        /* Efekt premium: oficjalne logo wyszarzone i delikatnie uśpione */
         .store-badge {
-            height: 40px;
+            height: 38px;
             width: auto;
             display: block;
             filter: grayscale(100%);
             opacity: 0.4;
             user-select: none;
-            pointer-events: none; /* Blokuje klikanie, bo to tylko zapowiedź */
+            pointer-events: none;
         }
 
         .badge-text {
@@ -255,69 +251,70 @@
         }
 
         .footer-links {
-            margin-top: 15px;
-            font-size: 15px;
+            margin-top: 10px;
+            font-size: 14px;
         }
 
         .footer-links a {
             color: #000000;
             text-decoration: underline;
-            margin: 0 10px;
+            margin: 0 8px;
             font-weight: 500;
         }
 
         /* RESPONSIVENESS (Komputery) */
         @media (min-width: 768px) {
             header {
-                padding: 24px 0;
-                margin-bottom: 40px;
+                padding: 16px 0 10px 0;
             }
             header h1 {
-                font-size: 34px;
+                font-size: 30px;
             }
             
-            /* Równy podział 50/50 na desktopie */
             .hero-section {
                 flex-direction: row;
                 align-items: center;
-                gap: 40px;
+                gap: 35px;
+                margin-bottom: 20px;
             }
             
+            /* Kompaktowe proporcje i wyrównanie do lewej krawędzi */
             .hero-image {
-                flex: 0 0 54%;
-                width: 54%;
+                flex: 0 0 48%;
+                width: 48%;
                 margin-left: 0;
-                margin-right: 0;  
             }
 
-            /* Zapewnienie, że sam obrazek nie jest przycinany */
             .hero-image img {
                 width: 100%;
-                height: auto;           /* Zachowuje naturalne proporcje grafiki */
-                object-fit: contain;    /* Zapobiega przycinaniu krawędzi */
+                max-width: 100%;
+                margin-left: 0;
+                height: auto;
+                object-fit: contain;
+                display: block;
             }
             
             .hero-content {
-                flex: 0 0 46%;
-                width: 46%;
+                flex: 0 0 52%;
+                width: 52%;
             }
             
             .hero-marketing {
                 text-align: left;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
             }
             
             .hero-marketing h2 {
-                font-size: 28px;
+                font-size: 23px;
             }
 
             .features {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
+                gap: 20px;
             }
 
             .coming-soon-box p {
-                font-size: 16px;
+                font-size: 15px;
             }
         }
     </style>
@@ -337,14 +334,13 @@
             <div class="hero-content">
                 <div class="hero-marketing">
                     <h2>Odkryj przepisy, które pomogą Ci osiągać cele i cieszyć się smakiem.</h2>
-                    <p>Ketobook to polska, intuicyjna aplikacja z pysznymi przepisami keto i low-carb. Zapisz się na listę oczekujących, odbierz darmowy bonus i dowiedz się o premierze jako pierwszy!</p>
+                    <p>Ketobook to polska, spersonalizowana aplikacja z przepisami keto i low-carb. Zapisz się na listę oczekujących, odbierz darmowy bonus i dowiedz się o premierze jako pierwszy!</p>
                 </div>
 
                 <div class="newsletter-box">
                     <form action="https://5c6378f9.sibforms.com/serve/MUIFAF-QO5hQApyVSvJI0yf9xjMzcAy-3BjZ9JdgSF3EJ7CFH-vfw_aretLSR_RyXZ4ct3M7Me_xka-j3zWJ6_WjBHdfwdH4jLLUhAGQAUq07d2Bf3DTW5MKvuakwCVzz69L-G6xZ9EfLWYq17x44K5_pv3cuYhR1WMVSE9nIVRkmhEf6hROrqK9AWC5TsvlfoShRdZzd7c0ltwNiA==" method="POST">
                         <input type="email" id="EMAIL" name="EMAIL" placeholder="Twój adres e-mail..." autocomplete="off" required>
                         
-                        <!-- Ukryte parametry techniczne Brevo oraz ochrona honeypot przed botami -->
                         <input type="text" name="email_address_check" value="" class="anti-bot">
                         <input type="hidden" name="locale" value="en">
                         <input type="hidden" name="html_type" value="simple">
@@ -377,33 +373,32 @@
             </div>
         </section>
 
-        <!-- NOWA SEKCJA 3: PREMIERA WKRÓTCE (Bezpieczna czasowo, efekt premium) -->
+        <!-- SEKCJA PREMIERY Z POLSKIMI BADGE'AMI -->
         <section>
             <div class="coming-soon-box">
-                <h3>Premiera już w październiku</h3>
+                <h3>Premiera już w październiku!</h3>
                 <p>Aplikacja Ketobook przechodzi obecnie ostatnie testy i optymalizacje, aby zapewnić najwyższą jakość oraz płynność działania. Oficjalna premiera w sklepach odbędzie się już niebawem – zapisani na listę otrzymają powiadomienie o starcie w pierwszej kolejności.</p>
                 
                 <div class="store-badges">
                     <div class="badge-wrapper">
-                        <img class="store-badge" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                        <img class="store-badge" src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Download_on_the_App_Store_Badge_PL.svg" alt="Pobierz w App Store">
                         <span class="badge-text">Dostępne wkrótce</span>
                     </div>
                     <div class="badge-wrapper">
-                        <img class="store-badge" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                        <img class="store-badge" src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Google_Play_Store_badge_PL.svg" alt="POBIERZ Z Google Play">
                         <span class="badge-text">Dostępne wkrótce</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- NIEZMIENIONA STOPKA -->
+        <!-- STOPKA -->
         <section style="text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
             <div class="footer-links">
                 <a href="https://ketobook.pl/regulamin">Regulamin</a> | 
                 <a href="https://ketobook.pl/polityka-prywatnosci">Polityka Prywatności</a> |
                 <a href="https://ketobook.pl/kontakt">Kontakt</a> |
                 <a href="https://ketobook.pl/usun-konto">Usuń konto</a>
-                
             </div>
         </section>
     </div>
