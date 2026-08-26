@@ -2,188 +2,394 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomoc i Kontakt - Ketobook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Ketobook - Twoja aplikacja keto i low-carb</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Import czcionki Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --primary-color: #2e7d32;
-            --text-color: #333333;
-            --bg-color: #f9f9f9;
-            --card-bg: #ffffff;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+        /* RESET & BAZA */
+        html, body {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #000000;
+            line-height: 1.6;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+        
+        *, *:before, *:after {
+            box-sizing: inherit;
         }
 
         .container {
-            max-width: 800px;
-            margin: 40px auto 20px auto;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 80px 20px;
         }
 
-        h1 {
-            color: var(--text-color);
-            margin-top: 0;
-            font-size: 28px;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
+        /* Kompaktowy AppBar wzorowany na aplikacjach mobilnych */
+        header {
+            padding: 16px 0;
+            text-align: left;
         }
 
-        h2 {
-            color: var(--text-color);
-            font-size: 20px;
-            margin-top: 25px;
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 500;
+            color: #000000;
+            letter-spacing: 0px;
+            line-height: 1.2;
         }
 
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-box {
-            background-color: #f0f7f0;
-            border-left: 4px solid var(--primary-color);
-            padding: 15px 20px;
-            margin-top: 15px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        /* Stylizacja rozwijanego FAQ */
-        details {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            padding: 12px 16px;
-            transition: all 0.2s ease;
-        }
-
-        details[open] {
-            border-color: var(--primary-color);
-            background-color: #fafafa;
-        }
-
-        summary {
-            font-weight: 600;
-            color: var(--text-color);
-            cursor: pointer;
-            list-style: none; /* ukrywa domyślną strzałkę w niektórych przeglądarkach */
+        /* HERO SECTION */
+        .hero-section {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column; 
+            gap: 25px;
+            width: 100%;
+            margin-bottom: 40px;
         }
 
-        summary::-webkit-details-marker {
-            display: none; /* ukrywa domyślną strzałkę w Safari/Chrome */
+        /* Grafika od brzegu do brzegu na telefonie */
+        .hero-image {
+           width: 100vw;          
+           margin-left: -20px;    
+           border-radius: 0;      
+           overflow: hidden;
         }
 
-        summary::after {
-            content: "+";
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-left: 10px;
+        .hero-image img {
+           width: 100%;
+           height: auto;
+           aspect-ratio: 1 / 1;
+           object-fit: cover;
+           display: block;
         }
 
-        details[open] summary::after {
-            content: "−";
+        .hero-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        summary:hover {
-            color: var(--primary-color);
-        }
-
-        .faq-answer {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed #e0e0e0;
-            color: #555555;
-        }
-
-        footer {
+        /* Teksty wyśrodkowane na mobile z zachowaniem większych odległości */
+        .hero-marketing {
             text-align: center;
-            margin: 30px auto;
-            font-size: 14px;
-            color: #666666;
+            margin-bottom: 30px;
         }
 
-        footer a {
-            color: #666666;
-            margin: 0 8px;
+        .hero-marketing h2 {
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #000000;
+            margin: 0 0 16px 0;
         }
 
-        footer a:hover {
-            color: var(--primary-color);
+        .hero-marketing p {
+            font-size: 15px;
+            color: #4a5d49;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Formularz zapisu */
+        .newsletter-box {
+            background-color: #f7f7f7;
+            padding: 25px 20px;
+            border-radius: 12px;
+        }
+
+        .newsletter-box form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .newsletter-box input[type="email"] {
+            padding: 14px;
+            border: 2px solid #cbd5cb;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .newsletter-box input[type="email"]::placeholder {
+            font-family: 'Poppins', sans-serif;
+            color: #7a8a79;
+        }
+
+        /* Styl ukrywający pole zabezpieczające anty-bot przed ludźmi */
+        .newsletter-box input.anti-bot {
+            display: none !important;
+        }
+
+        .newsletter-box button {
+            background-color: #849e4a;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .newsletter-box button:hover {
+            opacity: 0.9;
+        }
+
+        /* POZOSTAŁE SEKCJE */
+        section {
+            padding: 40px 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        section h3 {
+            font-size: 22px;
+            font-weight: 500;
+            color: #000000;
+            margin: 0 0 20px 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .feature {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .feature h4 {
+            margin: 0 0 8px 0;
+            font-size: 17px;
+            font-weight: 500;
+            color: #000000;
+        }
+
+        .feature p {
+            margin: 0;
+            font-size: 15px;
+            color: #4a5d49;
+        }
+
+        /* NOWE STYLE DLA SEKCJI PREMIERY */
+        .coming-soon-box {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .coming-soon-box p {
+            font-size: 15px;
+            color: #4a5d49;
+            margin: 0 0 25px 0;
+        }
+
+        .store-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Efekt premium: oficjalne logo wyszarzone i delikatnie uśpione */
+        .store-badge {
+            height: 40px;
+            width: auto;
+            display: block;
+            filter: grayscale(100%);
+            opacity: 0.4;
+            user-select: none;
+            pointer-events: none; /* Blokuje klikanie, bo to tylko zapowiedź */
+        }
+
+        .badge-text {
+            font-size: 12px;
+            color: #a0b09f;
+            font-weight: 500;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+            font-size: 15px;
+        }
+
+        .footer-links a {
+            color: #000000;
+            text-decoration: underline;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        /* RESPONSIVENESS (Komputery) */
+        @media (min-width: 768px) {
+            header {
+                padding: 24px 0;
+                margin-bottom: 40px;
+            }
+            header h1 {
+                font-size: 34px;
+            }
+            
+            /* Równy podział 50/50 na desktopie */
+            .hero-section {
+                flex-direction: row;
+                align-items: center;
+                gap: 60px;
+            }
+            
+            .hero-image {
+                flex: 1;
+                width: 50%;
+                max-width: none;
+                margin-left: 0;     
+                border-radius: 16px; 
+            }
+            
+            .hero-content {
+                flex: 1;
+                width: 50%;
+            }
+            
+            .hero-marketing {
+                text-align: left;
+                margin-bottom: 35px;
+            }
+            
+            .hero-marketing h2 {
+                font-size: 28px;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .coming-soon-box p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Centrum Pomocy i Kontakt</h1>
-    
-    <p>Masz pytanie dotyczące aplikacji Ketobook, napotkałeś/aś problem techniczny lub chcesz podzielić się opinią? Jesteśmy do Twojej dyspozycji!</p>
+    <div class="container">
+        <header>
+            <h1>Ketobook</h1>
+        </header>
 
-    <h2>Napisz do nas</h2>
+        <div class="hero-section">
+            <div class="hero-image">
+                <img src="ketobook-www-1.png" alt="Ekrany aplikacji Ketobook">
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-marketing">
+                    <h2>Koniec z nudną dietą. Odkryj przepisy, które redukują wagę i zachwycają smakiem.</h2>
+                    <p>Ketobook to nowa, intuicyjna aplikacja z pysznymi przepisami keto i low-carb. Zapisz się na listę oczekujących, odbierz darmowy bonus i dowiedz się o premierze jako pierwszy!</p>
+                </div>
 
-    <div class="contact-box">
-        <strong>Wskazówka:</strong> Najszybszym sposobem na uzyskanie pomocy technicznej jest użycie opcji <strong>Wsparcie techniczne</strong> bezpośrednio w aplikacji (znajdziesz ją w zakladce <em>Moje konto / Profil</em>). Aplikacja automatycznie dołączy potrzebne informacje techniczne, co pozwoli nam szybciej rozwiązać Twój problem.<br><br>
-        Możesz również napisać do nas bezpośrednio na e-mail: <a href="mailto:info@ketobook.pl">info@ketobook.pl</a>. Odpowiadamy zazwyczaj w ciągu 24–48 godzin w dni robocze.
+                <div class="newsletter-box">
+                    <form action="https://5c6378f9.sibforms.com/serve/MUIFAF-QO5hQApyVSvJI0yf9xjMzcAy-3BjZ9JdgSF3EJ7CFH-vfw_aretLSR_RyXZ4ct3M7Me_xka-j3zWJ6_WjBHdfwdH4jLLUhAGQAUq07d2Bf3DTW5MKvuakwCVzz69L-G6xZ9EfLWYq17x44K5_pv3cuYhR1WMVSE9nIVRkmhEf6hROrqK9AWC5TsvlfoShRdZzd7c0ltwNiA==" method="POST">
+                        <input type="email" id="EMAIL" name="EMAIL" placeholder="Twój adres e-mail..." autocomplete="off" required>
+                        
+                        <!-- Ukryte parametry techniczne Brevo oraz ochrona honeypot przed botami -->
+                        <input type="text" name="email_address_check" value="" class="anti-bot">
+                        <input type="hidden" name="locale" value="en">
+                        <input type="hidden" name="html_type" value="simple">
+                        
+                        <button type="submit">CHCĘ DARMOWY BONUS + DOSTĘP!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Dlaczego Ketobook?</h3>
+            <div class="features">
+                <div class="feature">
+                    <h4>🗂️ Koniec z chaosem i zapisywaniem linków</h4>
+                    <p>Zapomnij o przepisach rozsianych po Facebooku, Instagramie czy w zrzutach ekranu. W Ketobook zbierzesz wszystko w jednym, czytelnym miejscu – Twoja baza ulubionych posiłków jest zawsze pod ręką.</p>
+                </div>
+                <div class="feature">
+                    <h4>📱 Koniec z ręcznym liczeniem makro</h4>
+                    <p>Każdy przepis posiada precyzyjnie wyliczone białka, tłuszcze, węglowodany netto oraz kalorie. Ty skupiasz się na gotowaniu.</p>
+                </div>
+                <div class="feature">
+                    <h4>🛒 Szybkie zakupy, proste składniki</h4>
+                    <p>Przepisy opierają się na produktach z popularnych dyskontów. Intuicyjna lista zakupów maksymalnie skróci Twój czas w sklepie.</p>
+                </div>
+                <div class="feature">
+                    <h4>💎 Menu premium bez monotonii</h4>
+                    <p>Przełam rutynę boczku i jajecznicy. Odkryj dziesiątki autorskich przepisów stworzonych dla urozmaiconego stylu życia low-carb.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOWA SEKCJA 3: PREMIERA WKRÓTCE (Bezpieczna czasowo, efekt premium) -->
+        <section>
+            <div class="coming-soon-box">
+                <h3>Premiera już niedługo</h3>
+                <p>Aplikacja Ketobook przechodzi obecnie ostatnie testy i optymalizacje, aby zapewnić najwyższą jakość oraz płynność działania. Oficjalna premiera w sklepach odbędzie się już niebawem – zapisani na listę otrzymają powiadomienie o starcie w pierwszej kolejności.</p>
+                
+                <div class="store-badges">
+                    <div class="badge-wrapper">
+                        <img class="store-badge" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                        <span class="badge-text">Dostępne wkrótce</span>
+                    </div>
+                    <div class="badge-wrapper">
+                        <img class="store-badge" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                        <span class="badge-text">Dostępne wkrótce</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIEZMIENIONA STOPKA -->
+        <section style="text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
+            <div class="footer-links">
+                <a href="https://ketobook.pl/regulamin">Regulamin</a> | 
+                <a href="https://ketobook.pl/polityka-prywatnosci">Polityka Prywatności</a> |
+                <a href="https://ketobook.pl/kontakt">Kontakt</a> |
+                <a href="https://ketobook.pl/usun-konto">Usuń konto</a>
+                
+            </div>
+        </section>
     </div>
-
-    <h2>Często zadawane pytania (FAQ)</h2>
-
-    <details>
-        <summary>Jak zresetować hasło do konta?</summary>
-        <div class="faq-answer">
-            Na ekranie logowania w aplikacji wybierz opcję "Zapomniałem hasła", wpisz swój adres e-mail i postępuj zgodnie z instrukcjami wysłanymi w wiadomości.
-        </div>
-    </details>
-
-    <details>
-        <summary>Jak usunąć konto z aplikacji?</summary>
-        <div class="faq-answer">
-            Możesz usunąć konto bezpośrednio w ustawieniach aplikacji (Moje konto &rarr; Usuń konto) lub składając wniosek na naszej stronie <a href="https://ketobook.pl/usun-konto">Usuwanie konta</a>.
-        </div>
-    </details>
-
-    <details>
-        <summary>Czy aplikacja działa w trybie offline?</summary>
-        <div class="faq-answer">
-            Do aktualizacji bazy przepisów, zapisywania ulubionych dań i synchronizacji danych wymagane jest aktywne połączenie z Internetem.
-        </div>
-    </details>
-
-    <details>
-        <summary>Gdzie zgłaszać błędy w działaniu aplikacji?</summary>
-        <div class="faq-answer">
-            Błędy możesz zgłaszać bezpośrednio z poziomu aplikacji (Profil &rarr; Wsparcie techniczne) lub wysyłając wiadomość na adres <a href="mailto:info@ketobook.pl">info@ketobook.pl</a>.
-        </div>
-    </details>
-</div>
-
-<footer>
-    <a href="https://ketobook.pl">Strona główna</a> | 
-    <a href="https://ketobook.pl/regulamin">Regulamin</a> | 
-    <a href="https://ketobook.pl/polityka-prywatnosci">Polityka prywatności</a> | 
-    <a href="https://ketobook.pl/usun-konto">Usuń konto</a>
-</footer>
-
-</body>
-</html>
 
 </body>
 </html>
