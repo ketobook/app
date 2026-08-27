@@ -220,26 +220,11 @@
         }
 
         .store-badges {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .badge-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .store-badges {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
 }
 
 .badge-wrapper {
@@ -250,33 +235,25 @@
 }
 
 .store-badge {
-    height: 40px;
+    height: 42px;
     width: auto;
     display: block;
-    filter: grayscale(100%);
-    opacity: 0.45;
+    opacity: 0.6; /* Eleganckie wygaszenie "Dostępne wkrótce" */
     user-select: none;
     pointer-events: none;
-    transition: all 0.2s ease;
 }
 
-/* Kompensacja niewidocznego marginesu w wektorze Google */
+/* Wektor Google Play od wydawcy ma wbudowany duży pusty margines – odcinamy go w CSS */
 .store-badge.google {
-    height: 56px; /* Zwiększamy wysokość ramki pliku, by optycznie sam przycisk był identyczny z App Store */
-    margin: -8px 0; /* Niwelujemy dodatkowy odstęp pionowy */
+    height: 60px;
+    margin: -9px -10px; 
 }
 
 .badge-text {
     font-size: 12px;
-    color: #a0b09f;
+    color: #888888;
     font-weight: 500;
 }
-
-        .badge-text {
-            font-size: 12px;
-            color: #a0b09f;
-            font-weight: 500;
-        }
 
         .footer-links {
             margin-top: 10px;
