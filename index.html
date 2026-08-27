@@ -172,39 +172,71 @@
             margin: 0 0 16px 0;
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
+        /* Kontener główny dla boxów */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px; /* Większy odstęp między kartami */
+    max-width: 960px;
+    margin: 40px auto 0 auto;
+    padding: 0 16px;
+}
 
-        /* KARTY Z CIENIEM */
-        .feature {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 12px;
-            border: none;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+/* Pojedyncza karta (box) */
+.feature {
+    background: #ffffff;
+    border: 1px solid #eef2ed; /* Delikatna, czysta ramka */
+    border-radius: 16px; /* Miękkie, nowoczesne zaokrąglenie */
+    padding: 28px 24px; /* Dużo przestrzeni wewnątrz */
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* Bardzo lekki, rozproszony cień */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-        .feature:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.11);
-        }
+/* Mikrointerakcja po najechaniu myszką */
+.feature:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
 
-        .feature h4 {
-            margin: 0 0 6px 0;
-            font-size: 18px;
-            font-weight: 500;
-            color: #000000;
-        }
+/* Nagłówek w karcie */
+.feature h4 {
+    font-size: 1.15rem; /* ~18-19px na desktopie */
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    line-height: 1.35;
+}
 
-        .feature p {
-            margin: 0;
-            font-size: 16px;
-            color: #4a5d49;
-        }
+/* Tekst opisowy w karcie */
+.feature p {
+    font-size: 0.95rem; /* ~15px na desktopie – idealna czytelność bez przytłoczenia */
+    line-height: 1.6; /* Zwiększona interlinia dla lekkości */
+    color: #555555; /* Miękki ciemnoszary zamiast czystej czerni */
+    margin: 0;
+}
+
+/* RWD – Dostosowanie typografii dla telefonów */
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .feature {
+        padding: 20px 18px;
+    }
+
+    .feature h4 {
+        font-size: 1.1rem; /* Zapewnia doskonałą czytelność na małym ekranie */
+    }
+
+    .feature p {
+        font-size: 0.95rem;
+    }
+}
 
         /* SEKCJA PREMIERY */
         .coming-soon-box {
