@@ -234,19 +234,26 @@
     gap: 6px;
 }
 
+/* Wygaszenie i podstawowe parametry */
 .store-badge {
-    height: 42px;
-    width: auto;
     display: block;
-    opacity: 0.6; /* Eleganckie wygaszenie "Dostępne wkrótce" */
+    opacity: 0.55;
+    filter: grayscale(100%);
     user-select: none;
     pointer-events: none;
 }
 
-/* Wektor Google Play od wydawcy ma wbudowany duży pusty margines – odcinamy go w CSS */
+/* Sztywne wymiary dopasowane optycznie */
+.store-badge.app-store {
+    height: 40px;
+    width: auto;
+}
+
 .store-badge.google {
-    height: 60px;
-    margin: -9px -10px; 
+    height: 40px; /* Identyczna wysokość pliku */
+    width: auto;
+    transform: scale(0.82); /* Zmniejszamy masywny badge Google o 18% */
+    margin: -4px -10px; /* Niwelujemy puste krawędzie wokół SVG Google */
 }
 
 .badge-text {
