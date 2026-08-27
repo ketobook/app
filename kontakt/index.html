@@ -21,9 +21,30 @@
             padding: 20px;
         }
 
+        /* Header / Logo */
+        header {
+            max-width: 800px;
+            margin: 0 auto 10px auto;
+            padding: 10px 0;
+            text-align: left;
+        }
+
+        .logo-link {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .logo-link:hover {
+            opacity: 0.7;
+            text-decoration: none;
+        }
+
         .container {
             max-width: 800px;
-            margin: 40px auto 20px auto;
+            margin: 0 auto 20px auto;
             background: var(--card-bg);
             padding: 40px;
             border-radius: 12px;
@@ -123,14 +144,20 @@
         footer a {
             color: #666666;
             margin: 0 8px;
+            text-decoration: none;
         }
 
         footer a:hover {
             color: var(--primary-color);
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+
+<header>
+    <a href="https://ketobook.pl" class="logo-link">Ketobook</a>
+</header>
 
 <div class="container">
     <h1>Centrum Pomocy i Kontakt</h1>
@@ -140,7 +167,7 @@
     <h2>Napisz do nas</h2>
 
     <div class="contact-box">
-        <strong>Wskazówka:</strong> Najszybszym sposobem na uzyskanie pomocy technicznej jest użycie opcji <strong>Wsparcie techniczne</strong> bezpośrednio w aplikacji (znajdziesz ją w zakladce <em>Moje konto</em>). Aplikacja automatycznie dołączy potrzebne informacje techniczne, co pozwoli nam szybciej rozwiązać Twój problem.<br><br>
+        <strong>Wskazówka:</strong> Najszybszym sposobem na uzyskanie pomocy technicznej jest użycie opcji <strong>Wsparcie techniczne</strong> bezpośrednio w aplikacji (znajdziesz ją w zakładce <em>Moje konto</em>). Aplikacja automatycznie dołączy potrzebne informacje techniczne, co pozwoli nam szybciej rozwiązać Twój problem.<br><br>
         Możesz również napisać do nas bezpośrednio na e-mail: <a href="mailto:info@ketobook.pl">info@ketobook.pl</a>. Odpowiadamy zazwyczaj w ciągu 48 godzin w dni robocze.
     </div>
 
