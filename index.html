@@ -37,7 +37,7 @@
             padding: 0 20px 60px 20px;
         }
 
-        /* AppBar */
+        /* AppBar & Logo Link */
         header {
             padding: 16px 0 12px 0;
             text-align: left;
@@ -47,9 +47,17 @@
             margin: 0;
             font-size: 28px;
             font-weight: 500;
-            color: #000000;
-            letter-spacing: 0px;
             line-height: 1.2;
+        }
+
+        .logo-link {
+            color: #000000;
+            text-decoration: none; /* Usuwa domyślne podkreślenie linku */
+            transition: opacity 0.2s ease;
+        }
+
+        .logo-link:hover {
+            opacity: 0.7; /* Subtelny efekt najechania kursorom myszy */
         }
 
         /* HERO SECTION */
@@ -349,7 +357,7 @@
 
     <div class="container">
         <header>
-            <h1>Ketobook</h1>
+            <h1><a href="https://ketobook.pl" class="logo-link">Ketobook</a></h1>
         </header>
 
         <div class="hero-section">
