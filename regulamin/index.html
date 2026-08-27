@@ -23,11 +23,39 @@
 
         .container {
             max-width: 800px;
-            margin: 40px auto 20px auto;
+            margin: 20px auto;
             background: var(--card-bg);
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* AppBar & Logo Link */
+        header {
+            max-width: 800px;
+            margin: 20px auto 0 auto;
+            padding: 0 10px;
+            text-align: left;
+        }
+
+        header .logo-h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.2;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .logo-link {
+            color: #000000;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .logo-link:hover {
+            opacity: 0.7;
+            text-decoration: none;
         }
 
         h1 {
@@ -79,6 +107,10 @@
     </style>
 </head>
 <body>
+
+<header>
+    <div class="logo-h1"><a href="https://ketobook.pl" class="logo-link">Ketobook</a></div>
+</header>
 
 <div class="container">
     <h1>Regulamin aplikacji mobilnej „Ketobook”</h1>
@@ -139,9 +171,9 @@
 
 <footer>
     <div class="footer-links">
-    <a href="https://ketobook.pl/">Strona główna</a> | 
-    <a href="https://ketobook.pl/polityka-prywatnosci">Polityka prywatności</a> | 
-    <a href="https://ketobook.pl/usun-konto/">Usuń konto</a>
+        <a href="https://ketobook.pl/">Strona główna</a> | 
+        <a href="https://ketobook.pl/polityka-prywatnosci">Polityka prywatności</a> | 
+        <a href="https://ketobook.pl/usun-konto/">Usuń konto</a>
     </div>
 </footer>
 
