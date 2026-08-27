@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -95,14 +95,15 @@
             font-weight: 500;
             line-height: 1.35;
             color: #000000;
-            margin: 0 0 10px 0;
+            margin: 0 0 12px 0;
         }
 
+        /* Responsywny, czytelny tekst w sekcji Hero */
         .hero-marketing p {
-            font-size: 14px;
+            font-size: 15px;
             color: #4a5d49;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         /* Formularz zapisu */
@@ -166,77 +167,51 @@
         }
 
         section h3 {
-            font-size: 20px;
-            font-weight: 500;
+            font-size: 22px;
+            font-weight: 600;
             color: #000000;
-            margin: 0 0 16px 0;
+            margin: 0 0 20px 0;
         }
 
-        /* Kontener główny dla boxów */
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px; /* Większy odstęp między kartami */
-    max-width: 960px;
-    margin: 40px auto 0 auto;
-    padding: 0 16px;
-}
+        /* KARTY (BOXY) ZALET */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto 0 auto;
+        }
 
-/* Pojedyncza karta (box) */
-.feature {
-    background: #ffffff;
-    border: 1px solid #eef2ed; /* Delikatna, czysta ramka */
-    border-radius: 16px; /* Miękkie, nowoczesne zaokrąglenie */
-    padding: 28px 24px; /* Dużo przestrzeni wewnątrz */
-    text-align: left;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* Bardzo lekki, rozproszony cień */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+        .feature {
+            background: #ffffff;
+            border: 1px solid #eef2ed;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: left;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-/* Mikrointerakcja po najechaniu myszką */
-.feature:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-}
+        .feature:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
 
-/* Nagłówek w karcie */
-.feature h4 {
-    font-size: 1.15rem; /* ~18-19px na desktopie */
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    line-height: 1.35;
-}
+        /* Kasujemy domyślny margines przeglądarki z nagłówka */
+        .feature h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0 0 10px 0; /* Górny margines wyzerowany */
+            line-height: 1.35;
+        }
 
-/* Tekst opisowy w karcie */
-.feature p {
-    font-size: 0.95rem; /* ~15px na desktopie – idealna czytelność bez przytłoczenia */
-    line-height: 1.6; /* Zwiększona interlinia dla lekkości */
-    color: #555555; /* Miękki ciemnoszary zamiast czystej czerni */
-    margin: 0;
-}
-
-/* RWD – Dostosowanie typografii dla telefonów */
-@media (max-width: 768px) {
-    .features {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .feature {
-        padding: 20px 18px;
-    }
-
-    .feature h4 {
-        font-size: 1.1rem; /* Zapewnia doskonałą czytelność na małym ekranie */
-    }
-
-    .feature p {
-        font-size: 0.95rem;
-    }
-}
+        .feature p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555555;
+            margin: 0;
+        }
 
         /* SEKCJA PREMIERY */
         .coming-soon-box {
@@ -246,53 +221,52 @@
         }
 
         .coming-soon-box p {
-            font-size: 14px;
+            font-size: 15px;
             color: #4a5d49;
             margin: 0 0 20px 0;
+            line-height: 1.6;
         }
 
         .store-badges {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    margin-top: 24px;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
 
-.badge-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
+        .badge-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
 
-/* Wygaszenie i podstawowe parametry */
-.store-badge {
-    display: block;
-    opacity: 0.55;
-    filter: grayscale(100%);
-    user-select: none;
-    pointer-events: none;
-}
+        .store-badge {
+            display: block;
+            opacity: 0.55;
+            filter: grayscale(100%);
+            user-select: none;
+            pointer-events: none;
+        }
 
-/* Sztywne wymiary dopasowane optycznie */
-.store-badge.app-store {
-    height: 40px;
-    width: auto;
-}
+        .store-badge.app-store {
+            height: 40px;
+            width: auto;
+        }
 
-.store-badge.google {
-    height: 40px; /* Identyczna wysokość pliku */
-    width: auto;
-    transform: scale(0.82); /* Zmniejszamy masywny badge Google o 18% */
-    margin: -4px -10px; /* Niwelujemy puste krawędzie wokół SVG Google */
-}
+        .store-badge.google {
+            height: 40px;
+            width: auto;
+            transform: scale(0.82);
+            margin: -4px -10px;
+        }
 
-.badge-text {
-    font-size: 12px;
-    color: #888888;
-    font-weight: 500;
-}
+        .badge-text {
+            font-size: 12px;
+            color: #888888;
+            font-weight: 500;
+        }
 
         .footer-links {
             margin-top: 10px;
@@ -306,7 +280,7 @@
             font-weight: 500;
         }
 
-        /* RESPONSIVENESS (Komputery) */
+        /* RESPONSIVENESS (Komputery & Tablety) */
         @media (min-width: 768px) {
             header {
                 padding: 16px 0 10px 0;
@@ -322,7 +296,6 @@
                 margin-bottom: 20px;
             }
             
-            /* Kompaktowe proporcje i wyrównanie do lewej krawędzi */
             .hero-image {
                 flex: 0 0 48%;
                 width: 48%;
@@ -352,13 +325,22 @@
                 font-size: 23px;
             }
 
+            /* Powiększony tekst pod nagłówkiem na desktopie */
+            .hero-marketing p {
+                font-size: 16px;
+            }
+
             .features {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                gap: 24px;
+            }
+
+            .feature h4 {
+                font-size: 1.15rem;
             }
 
             .coming-soon-box p {
-                font-size: 15px;
+                font-size: 16px;
             }
         }
     </style>
@@ -396,7 +378,7 @@
         </div>
 
         <section>
-            <h3>Stworzona, by ułatwić Twoje keto</h3>
+            <h3>Stworzony, by ułatwić Twoje keto</h3>
             <div class="features">
                 <div class="feature">
                     <h4>📖 Twoja własna, interaktywna książka kucharska</h4>
@@ -404,7 +386,7 @@
                 </div>
                 <div class="feature">
                     <h4>📅 Intuicyjny planer i bieżący licznik makro</h4>
-                    <p>Planuj posiłki na cały dzień i trzymaj się swoich celów. Podsumowanie makroskładników i kalorii aktualizuje się na bieżąco, dając Ci pełną świadomość i kontrolę nad codzienną dietą.</p>
+                    <p>Planuj posiłki na cały dzień i trzymaj się swoich celów. Podsumowanie makroskładników i kalorii aktualizuje się na bieżąco, dając Ci pełną świadomość i kontrolę nad codzienną dietą.</p>
                 </div>
                 <div class="feature">
                     <h4>🛒 Proste składniki i szybka lista zakupów</h4>
@@ -423,16 +405,16 @@
                 <h3>Premiera już w październiku!</h3>
                 <p>Aplikacja Ketobook przechodzi obecnie ostatnie testy i optymalizacje, aby zapewnić najwyższą jakość oraz płynność działania. Oficjalna premiera w sklepach odbędzie się już niebawem – zapisani na listę otrzymają powiadomienie o starcie w pierwszej kolejności.</p>
                 
-            <div class="store-badges">
-    <div class="badge-wrapper">
-        <img class="store-badge" src="app-store-badge.svg" alt="Pobierz w App Store">
-        <span class="badge-text">Dostępne wkrótce</span>
-    </div>
-    <div class="badge-wrapper">
-        <img class="store-badge google" src="google-play-badge.svg" alt="POBIERZ Z Google Play">
-        <span class="badge-text">Dostępne wkrótce</span>
-    </div>
-</div>
+                <div class="store-badges">
+                    <div class="badge-wrapper">
+                        <img class="store-badge app-store" src="app-store-badge.svg" alt="Pobierz w App Store">
+                        <span class="badge-text">Dostępne wkrótce</span>
+                    </div>
+                    <div class="badge-wrapper">
+                        <img class="store-badge google" src="google-play-badge.svg" alt="POBIERZ Z Google Play">
+                        <span class="badge-text">Dostępne wkrótce</span>
+                    </div>
+                </div>
             </div>
         </section>
 
